@@ -17,6 +17,11 @@
         </script>
 
         <script>
+            function fbLogin()
+            {
+                console.log('here');
+            }
+            
             console.log('app version 0.04');
 
             function statusChangeCallback(response)
@@ -49,6 +54,7 @@
         </script>
 
         <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        <button type="button" onclick="fbLogin();">Click Me!</button>
 
         <!-- <script src="./index.js"></script> -->
     </body>
