@@ -20,21 +20,28 @@
             console.log('app version 0.05');
 
             function testAPI() {
-                console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function(response) {
-                    console.log('Successful login for: ' + response.name);
-                    console.log('my detail:');
-                    console.log(response);
-                    // document.getElementById('status').innerHTML =
-                    // 'Thanks for logging in, ' + response.name + '!';
-                });
+                console.log('test api');
+                // console.log('Welcome!  Fetching your information.... ');
+                // FB.api('/me', function(response) {
+                //     console.log('Successful login for: ' + response.name);
+                //     console.log('my detail:');
+                //     console.log(response);
+                //     // document.getElementById('status').innerHTML =
+                //     // 'Thanks for logging in, ' + response.name + '!';
+                // });
 
-                FB.api('https://www.facebook.com/randy.hei/posts/10156469909361368?__xts__[0]=68.ARBjB5FhIhlrw80vi_Te18m_GDMys68thpNOpGTUDNSzjm7fXq8rOPYGJS5JSaoLv-fU2oPcyJUrQlWGDpO-umWhEvu1puZpxQNfjYSps1tjhIA2opkYbKDL7sD5llnM__hkPraRHZ7zfLgSgHzVU4dO2wbI1ECW38mbotXuIms-fyX_-K8s-URuPO82G540gbVbdNzOzMTCzGEw-vDdIFRtv4mcxDvzGxyHL8_15w&__tn__=-R/comments', function(response) {
-                    console.log('comments: ');
-                    console.log(response);
-                    // document.getElementById('status').innerHTML =
-                    // 'Thanks for logging in, ' + response.name + '!';
-                });
+// FB.api(path, method, params, callback)
+                FB.api(
+                    '/1946594448769686_1946597175436080/comments',
+                    'GET',
+                    {},
+                    function(response) {
+                    // Insert your code here
+                        console.log('testing 1');
+                        console.log(response);
+                    }
+                );
+
                 // $photo_comment = $facebook->api( $object_id . "/comments", "POST", array(
                 //     // local image used, prefixed with @ sign
                 //     'source' => '@meme.jpg'
