@@ -17,7 +17,7 @@
         </script>
 
         <script>
-            console.log('app version 0.05');
+            console.log('app version 0.097');
 
             function testAPI() {
                 console.log('test api');
@@ -31,10 +31,13 @@
                 // });
 
 // FB.api(path, method, params, callback)
+console.log('get--------------------------------');
                 FB.api(
                     '/1946594448769686_1946597175436080/comments',
                     'GET',
-                    {},
+                    {
+                        access_token: 'EAARKVirPZA6sBANFEzFvPYloNMfQAvqpI3c1DzZCk0UfPoJeQM8vq5AarDSrYh0W8N0RkQL7fVoaJUZCn1BXvMCZBPiOgWc7EluQ3Vxbk92dqiNXdLOjNtvlLLHPqLLLtu6cbJZCWWS7EePIDp32kAZCwXe9ZC0aezVCn1ioW85RQeAlwUZCLZBA5uCtgGZB6WO6c4pVeOjL3kBAZDZD',
+                    },
                     function(response) {
                     // Insert your code here
                         console.log('testing 1');
@@ -42,14 +45,22 @@
                     }
                 );
 
-                // $photo_comment = $facebook->api( $object_id . "/comments", "POST", array(
-                //     // local image used, prefixed with @ sign
-                //     'source' => '@meme.jpg'
-                //     // no message
-                // ) );
- 
-                // // will return id of comment on success
-                // print_r( $photo_comment );
+
+console.log('post--------------------------------');
+
+                FB.api(
+                    '/1946594448769686_1946597175436080/comments',
+                    'POST',
+                    {
+                        access_token: 'EAAEi4SGCooQBANhrWZBvEyAITtFT3Axq7G0lbNSkal5ZB9E5zeTdfoKIhtpzeb7pNZBfZBavMKl75wZCXbb1iClaCHcZAxcwMFghCctEKuMlwXGahNI4rZAKpQfZBsBDMYsvQku6hVzZCv7ztZBncMv9YZCLhRWtfZAAGwiCOfuIwNwmDiiDCB98kIVKONIw1i7CITwJr43KFTv7uwZDZD',
+                        message: 'post by app, time : ' + Date.now(),
+                        attachment_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png',
+                    },
+                    function(response) {
+                    // Insert your code here
+                        console.log(response);
+                    }
+                );
 
             }
 
@@ -75,20 +86,21 @@
 
             window.fbAsyncInit = function() {
                 FB.init({
-                    appId            : 'your-app-id',
+                    appId            : '319825301906052',
+                    access_token     : 'EAARKVirPZA6sBANFEzFvPYloNMfQAvqpI3c1DzZCk0UfPoJeQM8vq5AarDSrYh0W8N0RkQL7fVoaJUZCn1BXvMCZBPiOgWc7EluQ3Vxbk92dqiNXdLOjNtvlLLHPqLLLtu6cbJZCWWS7EePIDp32kAZCwXe9ZC0aezVCn1ioW85RQeAlwUZCLZBA5uCtgGZB6WO6c4pVeOjL3kBAZDZD',
                     autoLogAppEvents : true,
                     xfbml            : true,
                     version          : 'v3.1'
                 });
 
-                FB.getLoginStatus(function(response) {
-                    statusChangeCallback(response);
-                });
+                // FB.getLoginStatus(function(response) {
+                //     statusChangeCallback(response);
+                // });
             };
 
         </script>
 
-        <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        <!-- <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
         <button type="button" onclick="fbLogin();">Click Me!</button>
 
         <!-- <script src="./index.js"></script> -->
