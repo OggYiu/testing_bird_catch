@@ -13,15 +13,28 @@
             js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=319825301906052&autoLogAppEvents=1';
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
+            
         </script>
-
+        
         <script>
-            console.log('app version 0.03');
-            console.log('app version 0.03');
-            console.log('app version 0.03');
-            console.log('app version 0.03');
-            console.log('app version 0.03');
-            console.log('app version 0.03');
+            console.log('app version 0.04');
+
+            function statusChangeCallback(response)
+            {
+                console.log('response detail: \n');
+                console.log(response);
+                
+                if(response.status === 'connected')
+                {
+
+                }
+                else
+                {
+                }
+            }
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
         </script>
 
         <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
