@@ -17,7 +17,7 @@
             if (response.status === 'connected') {
                 window.location.href=uri;
             } else {
-                window.location = encodeURI("https://www.facebook.com/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri="+uri+"&response_type=token");
+                window.location = encodeURI("https://www.facebook.com/dialog/oauth?client_id=319825301906052&redirect_uri="+uri+"&response_type=token");
             }
         });
       };
