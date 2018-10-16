@@ -12,7 +12,7 @@
         //     href: 'https://developers.facebook.com/docs/'
         //   }, function(response){});
 
-        var uri = encodeURI('http://example.com');
+        var uri = encodeURI('https://reverent-dijkstra-754fba.netlify.com/');
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 window.location.href=uri;
