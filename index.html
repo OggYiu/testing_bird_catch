@@ -19,6 +19,25 @@
         <script>
             console.log('app version 0.05');
 
+            function testAPI() {
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function(response) {
+                    console.log('Successful login for: ' + response.name);
+                    document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+                });
+
+                // $photo_comment = $facebook->api( $object_id . "/comments", "POST", array(
+                //     // local image used, prefixed with @ sign
+                //     'source' => '@meme.jpg'
+                //     // no message
+                // ) );
+ 
+                // // will return id of comment on success
+                // print_r( $photo_comment );
+
+            }
+
             function statusChangeCallback(response)
             {
                 console.log('response detail: \n');
@@ -26,7 +45,7 @@
                 
                 if(response.status === 'connected')
                 {
-
+                    testAPI();
                 }
                 else
                 {
@@ -36,15 +55,6 @@
             {
                 FB.login(function(response){
                     statusChangeCallback(response);
-                });
-            }
-
-            function testAPI() {
-                console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function(response) {
-                    console.log('Successful login for: ' + response.name);
-                    document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
                 });
             }
 
