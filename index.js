@@ -7,10 +7,19 @@
           xfbml            : true,
           version          : 'v3.1'
         });
-        FB.ui({
-            method: 'share',
-            href: 'https://developers.facebook.com/docs/'
-          }, function(response){});
+        // FB.ui({
+        //     method: 'share',
+        //     href: 'https://developers.facebook.com/docs/'
+        //   }, function(response){});
+
+        var uri = encodeURI('http://example.com');
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                window.location.href=uri;
+            } else {
+                window.location = encodeURI("https://www.facebook.com/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri="+uri+"&response_type=token");
+            }
+        });
       };
     
       (function(d, s, id){
