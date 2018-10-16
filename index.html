@@ -17,12 +17,7 @@
         </script>
 
         <script>
-            function fbLogin()
-            {
-                console.log('here');
-            }
-            
-            console.log('app version 0.04');
+            console.log('app version 0.05');
 
             function statusChangeCallback(response)
             {
@@ -36,6 +31,12 @@
                 else
                 {
                 }
+            }
+            function fbLogin()
+            {
+                FB.login(function(response){
+                    statusChangeCallback(response);
+                });
             }
 
             window.fbAsyncInit = function() {
