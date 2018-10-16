@@ -7,11 +7,6 @@
           xfbml            : true,
           version          : 'v3.1'
         });
-
-        FB.ui({
-            method: 'share',
-            href: 'https://developers.facebook.com/docs/'
-          }, function(response){});
       };
     
       (function(d, s, id){
