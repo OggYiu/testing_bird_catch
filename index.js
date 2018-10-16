@@ -1,0 +1,24 @@
+// window.onload = function() {
+    window.fbAsyncInit = function() {
+        console.log('fb init');
+        FB.init({
+          appId            : '319825301906052',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.1'
+        });
+
+        FB.ui({
+            method: 'share',
+            href: 'https://developers.facebook.com/docs/'
+          }, function(response){});
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+// }
